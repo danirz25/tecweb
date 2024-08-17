@@ -7,6 +7,6 @@ NOMBRE: Daniel Patiño Ruiz
 
 MATERIA: Desarrollo de Aplicaciones Web
 
-PERIODO:
+PERIODO: Séptimo semestre.
 
 DESCRIPCIÓN:
