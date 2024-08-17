@@ -9,4 +9,4 @@ MATERIA: Desarrollo de Aplicaciones Web
 
 PERIODO: Séptimo semestre.
 
-DESCRIPCIÓN:
+DESCRIPCIÓN: Trabajo de Commits, Xampp y repositorios.
