@@ -60,7 +60,7 @@
     var_dump($b); 
     echo "<br>";
 
-    $c = $b*10;
+    $c = intval($b)*10;
     var_dump($c); 
     echo "<br>";
 
@@ -68,7 +68,9 @@
     var_dump($a); 
     echo "<br>";
 
-    $b *= $c; 
+    $b_numeric = intval($b);
+
+    $b = $b_numeric * $c;
     var_dump($b); 
     echo "<br>";
 
@@ -78,11 +80,24 @@
     ?>
     <h2>Ejercicio 4</h2>
     <?php
-
+    echo "<pre>";
+    echo "Variables con \$GLOBALS:\n";
+    echo "a: " . $GLOBALS['a'] . "\n";
+    echo "b: " . $GLOBALS['b'] . "\n";
+    echo "c: " . $GLOBALS['c'] . "\n";
+    echo "z: ";
+    print_r($GLOBALS['z']);
+    echo "</pre>";
     ?>
         <h2>Ejercicio 5</h2>
     <?php
-    
+    $a = "7 personas";
+    $b = (integer) $a;
+    $a = “9E3”;
+    $c = (double) $a;
+    echo "Valor de \$a: " . $a . "<br>";
+    echo "Valor de \$b: " . $b . "<br>";  
+    echo "Valor de \$c: " . $c . "<br>";
     ?>
         <h2>Ejercicio 6</h2>
     <?php
