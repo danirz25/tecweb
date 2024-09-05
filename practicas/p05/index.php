@@ -91,13 +91,13 @@
     ?>
         <h2>Ejercicio 5</h2>
     <?php
-    $a = "7 personas";
-    $b = (integer) $a;
-    $a = “9E3”;
-    $c = (double) $a;
-    echo "Valor de \$a: " . $a . "<br>";
-    echo "Valor de \$b: " . $b . "<br>";  
-    echo "Valor de \$c: " . $c . "<br>";
+        $a = "7 personas";
+        $b = (integer) $a;
+        $a = "9E3";
+        $c = (double) $a;
+        echo "Valor de \$a: " . $a . "<br>";
+        echo "Valor de \$b: " . $b . "<br>";  
+        echo "Valor de \$c: " . $c . "<br>";
     ?>
         <h2>Ejercicio 6</h2>
     <?php
