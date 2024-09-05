@@ -95,15 +95,66 @@
         $b = (integer) $a;
         $a = "9E3";
         $c = (double) $a;
+
         echo "Valor de \$a: " . $a . "<br>";
         echo "Valor de \$b: " . $b . "<br>";  
         echo "Valor de \$c: " . $c . "<br>";
     ?>
         <h2>Ejercicio 6</h2>
     <?php
-    
+     //LE damos un valor a las variables
+     $a = 1;
+     $b = 0;   //0 es considerado como FALSE y 1 como TRUE
+     $c = "hola";
+     $d = "null";
+     $e = null;
+     $f = array();
+
+     //Los mostramos
+     echo "Valor de \$a: ";
+     var_dump((bool)$a);
+     echo "<br>";
+
+     echo "Valor de \$b: ";
+     var_dump((bool)$b);
+     echo "<br>";
+
+     echo "Valor de \$c: ";
+     var_dump((bool)$c);
+     echo "<br>";
+
+     echo "Valor de \$d: ";
+     var_dump((bool)$d);
+     echo "<br>";
+
+     echo "Valor de \$e: ";
+     var_dump((bool)$e);
+     echo "<br>";
+
+     echo "Valor de \$f: ";
+     var_dump((bool)$f);
+     echo "<br>";
+
     ?>
-        <h2>Ejercicio 7</h2>
+    <h3>Ejercicio 6.1</h3>
+    <?php
+
+    $a = "0";
+    $b = "TRUE";
+    $c = FALSE;
+    $d = ($a OR $b);
+    $e = ($a AND $c);
+    $f = ($a XOR $b);
+
+    echo "Valor de \$a: " . $a . "<br>"; 
+    echo "Valor de \$b: " . $b . "<br>"; 
+    echo "Valor de \$c: " . ($c ? 'true' : 'false') . "<br>";
+    echo "Valor de \$d: " . ($d ? 'true' : 'false') . "<br>"; 
+    echo "Valor de \$e: " . ($e ? 'true' : 'false') . "<br>"; 
+    echo "Valor de \$f: " . ($f ? 'true' : 'false') . "<br>";
+    ?>
+
+    <h2>Ejercicio 7</h2>
     <?php
     
     ?>
