@@ -45,5 +45,52 @@
         //Se liberan las variables
         unset($a, $b, $c);
     ?>
+    <h2>Ejercicio 3</h2>
+    <?php
+    
+    $a = "PHP5";
+    var_dump($a); // Mostrar tipo y valor de la variable
+    echo "<br>";
+
+    $z[] = &$a;
+    var_dump($z); 
+    echo "<br>";
+
+    $b = "5a version de PHP";
+    var_dump($b); 
+    echo "<br>";
+
+    $c = $b*10;
+    var_dump($c); 
+    echo "<br>";
+
+    $a .= $b; 
+    var_dump($a); 
+    echo "<br>";
+
+    $b *= $c; 
+    var_dump($b); 
+    echo "<br>";
+
+    $z[0] = "MySQL";
+    var_dump($z); 
+    echo "<br>";
+    ?>
+    <h2>Ejercicio 4</h2>
+    <?php
+
+    ?>
+        <h2>Ejercicio 5</h2>
+    <?php
+    
+    ?>
+        <h2>Ejercicio 6</h2>
+    <?php
+    
+    ?>
+        <h2>Ejercicio 7</h2>
+    <?php
+    
+    ?>
 </body>
 </html>
