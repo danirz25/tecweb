@@ -1,4 +1,4 @@
-<!DOCTYPE html>
+<!DOCTYPE xhtml>
 <html lang="es">
 <head>
     <meta charset="UTF-8">
@@ -88,6 +88,11 @@
     echo "z: ";
     print_r($GLOBALS['z']);
     echo "</pre>";
+
+    //Se liberan las variables
+    //No se liberan en el ejercicio anterior porque como están relacionados,
+    //al entrar a la página generaría un error porque no hay variables para trabajar
+    unset($a, $b, $c, $z);
     ?>
         <h2>Ejercicio 5</h2>
     <?php
@@ -99,6 +104,8 @@
         echo "Valor de \$a: " . $a . "<br>";
         echo "Valor de \$b: " . $b . "<br>";  
         echo "Valor de \$c: " . $c . "<br>";
+            //Se liberan las variables
+        unset($a, $b, $c);
     ?>
         <h2>Ejercicio 6</h2>
     <?php
@@ -134,7 +141,8 @@
      echo "Valor de \$f: ";
      var_dump((bool)$f);
      echo "<br>";
-
+    //Se liberan las variables
+    unset($a, $b, $c, $d, $e, $f);
     ?>
     <h3>Ejercicio 6.1</h3>
     <?php
@@ -152,11 +160,29 @@
     echo "Valor de \$d: " . ($d ? 'true' : 'false') . "<br>"; 
     echo "Valor de \$e: " . ($e ? 'true' : 'false') . "<br>"; 
     echo "Valor de \$f: " . ($f ? 'true' : 'false') . "<br>";
+
+        //Se liberan las variables
+        unset($a, $b, $c, $d, $e, $f);
     ?>
 
     <h2>Ejercicio 7</h2>
     <?php
     
+    // Versión de PHP
+    echo "Versión de PHP: " . phpversion() . "<br>";
+    
+    // Versión de Apache
+    if (isset($_SERVER['SERVER_SOFTWARE'])) {
+        echo "Versión de Apache: " . $_SERVER['SERVER_SOFTWARE'] . "<br>";
+    } else {
+        echo "No se puede determinar la versión de Apache.<br>";
+    }
+    echo "<br>";
+    // SO del server
+    echo "Sistema Operativo del Servidor: " . php_uname('s') . "<br>";
+    echo "<br>";
+    // Idioma del navegador
+    echo "Idioma del Navegador: " . $_SERVER['HTTP_ACCEPT_LANGUAGE'] . "<br>";
     ?>
 </body>
 </html>
