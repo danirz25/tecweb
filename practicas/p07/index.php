@@ -27,6 +27,8 @@ include 'src/funciones.php';
         echo '<h3>' . esMultiploDe5y7($numero) . '</h3>';
     }
     ?>
+
+
     <!--
     <h2>Ejemplo de POST</h2>
     <form action="http://localhost/tecweb_copia/practicas/p07/funciones.php" method="post">
@@ -36,6 +38,8 @@ include 'src/funciones.php';
     </form>
     <br>
     -->
+
+    
     <?php
         if(isset($_POST["name"]) && isset($_POST["email"]))
         {
@@ -46,7 +50,7 @@ include 'src/funciones.php';
     ?>
 
         <!-- EJERCICIO 2 -->
-<h2>Ejercicio 2</h2>
+        <h2>Ejercicio 2</h2>
     <p>Generar secuencias de 3 números aleatorios hasta obtener un patrón de impar, par, impar:</p>
 
     <form action="" method="post">
@@ -59,16 +63,25 @@ include 'src/funciones.php';
         // Llamar a la función del Ejercicio 2
         $resultado = generarSecuenciaImparParImpar();
 
-        // Mostrar la matriz de resultados
+        // Mostrar la matriz de resultados en una tabla simple
         echo '<h3>Secuencias generadas:</h3>';
+        echo '<table border="1" cellpadding="5" cellspacing="0">';
+        echo '<tr><th>Número 1</th><th>Número 2</th><th>Número 3</th></tr>';
         foreach ($resultado['matriz'] as $fila) {
-            echo implode(', ', $fila) . '<br>';
+            echo '<tr>';
+            foreach ($fila as $numero) {
+                echo '<td>' . $numero . '</td>';
+            }
+            echo '</tr>';
         }
+        echo '</table>';
 
         // Mostrar el número de iteraciones y la cantidad total de números generados
         echo '<p>Número de iteraciones: ' . $resultado['iteraciones'] . '</p>';
         echo '<p>Cantidad total de números generados: ' . $resultado['totalNumerosGenerados'] . '</p>';
     }
     ?>
+
+
 </body>
 </html>
