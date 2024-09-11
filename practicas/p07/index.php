@@ -116,5 +116,18 @@ include 'src/funciones.php';
     }
     ?>
 
+
+    <h2>Ejercicio 4</h2>
+    <p>Generar un arreglo con índices de 97 a 122 y valores correspondientes a letras de la 'a' a la 'z':</p>
+
+     <?php
+    // Generar el arreglo con índices y valores ASCII
+    $arregloAscii = generarArregloAscii();
+
+    // Mostrar el arreglo en el formato [índice] => valor
+    foreach ($arregloAscii as $key => $value) {
+        echo '[' . $key . '] => ' . $value . '<br>';
+    }
+    ?>
 </body>
 </html>
