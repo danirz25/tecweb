@@ -47,4 +47,43 @@ function generarSecuenciaImparParImpar() {
         'totalNumerosGenerados' => $totalNumerosGenerados
     ];
 }
+
+
+
+//Ejercicio 3
+// while
+function encontrarMultiploWhile($numeroDado) {
+    $encontrado = false;
+    $contador = 0;
+    $numeroAleatorio = 0;
+
+    while (!$encontrado) {
+        $numeroAleatorio = rand(1, 1000); // Genera un número aleatorio
+        $contador++;
+        if ($numeroAleatorio % $numeroDado == 0) {
+            $encontrado = true;
+        }
+    }
+    
+    return [
+        'numeroAleatorio' => $numeroAleatorio,
+        'intentos' => $contador
+    ];
+}
+
+// Función usando ciclo do-while
+function encontrarMultiploDoWhile($numeroDado) {
+    $contador = 0;
+    $numeroAleatorio = 0;
+
+    do {
+        $numeroAleatorio = rand(1, 1000); // Genera un número aleatorio
+        $contador++;
+    } while ($numeroAleatorio % $numeroDado != 0);
+    
+    return [
+        'numeroAleatorio' => $numeroAleatorio,
+        'intentos' => $contador
+    ];
+}
 ?>

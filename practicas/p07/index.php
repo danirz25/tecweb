@@ -78,10 +78,43 @@ include 'src/funciones.php';
 
         // Mostrar el número de iteraciones y la cantidad total de números generados
         echo '<p>Número de iteraciones: ' . $resultado['iteraciones'] . '</p>';
-        echo '<p>Cantidad total de números generados: ' . $resultado['totalNumerosGenerados'] . '</p>';
+        echo '<p>Números generados en total: ' . $resultado['totalNumerosGenerados'] . '</p>';
     }
     ?>
 
+<h2>Ejercicio 3</h2>
+    <p>Encuentra el primer número aleatorio que sea múltiplo de un número dado (vía GET):</p>
+
+    <form action="" method="get">
+        <label for="numeroDado">Introduce un número:</label>
+        <input type="number" name="numeroDado" id="numeroDado" required>
+        <br><br>
+        <input type="submit" value="Buscar con while">
+    </form>
+
+    <br><br>
+
+    <?php
+    if (isset($_GET['numeroDado'])) {
+        $numeroDado = $_GET['numeroDado'];
+
+        // Llamar a la función con ciclo while
+        $resultadoWhile = encontrarMultiploWhile($numeroDado);
+
+        // Mostrar el resultado del ciclo while
+        echo '<h3>Resultado con ciclo while:</h3>';
+        echo '<p>Primer múltiplo encontrado: ' . $resultadoWhile['numeroAleatorio'] . '</p>';
+        echo '<p>Número de intentos: ' . $resultadoWhile['intentos'] . '</p>';
+
+        // Llamar a la función con ciclo do-while
+        $resultadoDoWhile = encontrarMultiploDoWhile($numeroDado);
+
+        // Mostrar el resultado del ciclo do-while
+        echo '<h3>Resultado con ciclo do-while:</h3>';
+        echo '<p>Primer múltiplo encontrado: ' . $resultadoDoWhile['numeroAleatorio'] . '</p>';
+        echo '<p>Número de intentos: ' . $resultadoDoWhile['intentos'] . '</p>';
+    }
+    ?>
 
 </body>
 </html>
