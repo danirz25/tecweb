@@ -53,7 +53,7 @@
                 echo '<td>' . $row['precio'] . '</td>';
                 echo '<td>' . $row['unidades'] . '</td>';
                 echo '<td>' . utf8_encode($row['detalles']) . '</td>';
-                echo '<td><img src="' . $row['imagen'] . '" alt="Imagen del producto" /></td>';
+                echo '<td><img src="' . $row['imagen'] . '" alt="Imagen del producto" width="150" height="150" /></td>';
                 echo '</tr>';
             }
 
@@ -69,3 +69,4 @@
 
 </body>
 </html>
+
