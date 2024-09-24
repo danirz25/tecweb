@@ -1,5 +1,4 @@
 <?php
-// Conexión a la base de datos
 @$link = new mysqli('localhost', 'root', 'DaPaRuniel25!', 'marketzone');
 
 /** Comprobar la conexión */
@@ -28,10 +27,13 @@ if ($result->num_rows > 0) {
     echo 'Error: El producto con el mismo nombre, marca y modelo ya existe en la base de datos.';
 } else {
     // Si no existe, insertar el nuevo producto
-    $sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
+    // Comentamos la query anterior
+    // $sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    
+    // Nueva query usando column names
+    $sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
     $stmt_insert = $link->prepare($sql_insert);
-    $eliminado = 0; // Valor predeterminado para la columna eliminado
-    $stmt_insert->bind_param("sssdisss", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen, $eliminado);
+    $stmt_insert->bind_param("sssdiss", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen);
     
     if ($stmt_insert->execute()) {
         // Resumen de datos insertados
@@ -44,7 +46,6 @@ if ($result->num_rows > 0) {
         echo 'Detalles: ' . htmlspecialchars($detalles) . '<br>';
         echo 'Unidades: ' . htmlspecialchars($unidades) . '<br>';
         echo 'Imagen: ' . htmlspecialchars($imagen) . '<br>';
-        echo 'Eliminado: ' . htmlspecialchars($eliminado) . '<br>'; // Mostrar el valor de eliminado
     } else {
         echo 'Error: El producto no pudo ser insertado.';
     }
