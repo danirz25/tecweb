@@ -22,16 +22,18 @@ $stmt->bind_param("sss", $nombre, $marca, $modelo);
 $stmt->execute();
 $result = $stmt->get_result();
 
+$stmt_insert = null; // Inicializar variable para evitar error
+
 if ($result->num_rows > 0) {
     // Si existe un producto con esos datos
     echo 'Error: El producto con el mismo nombre, marca y modelo ya existe en la base de datos.';
 } else {
     // Si no existe, insertar el nuevo producto
     // Comentamos la query anterior
-    // $sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
+    // $sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
     
-    // Nueva query usando column names
-    $sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen, eliminado) VALUES (?, ?, ?, ?, ?, ?, ?, 0)";
+    // Nueva query usando column names sin 'eliminado'
+    $sql_insert = "INSERT INTO productos (nombre, marca, modelo, precio, detalles, unidades, imagen) VALUES (?, ?, ?, ?, ?, ?, ?)";
     $stmt_insert = $link->prepare($sql_insert);
     $stmt_insert->bind_param("sssdiss", $nombre, $marca, $modelo, $precio, $detalles, $unidades, $imagen);
     
@@ -52,6 +54,11 @@ if ($result->num_rows > 0) {
 }
 
 $stmt->close();
-$stmt_insert->close();
+
+// Verificar si $stmt_insert fue inicializado antes de cerrarlo
+if ($stmt_insert !== null) {
+    $stmt_insert->close();
+}
+
 $link->close();
 ?>
