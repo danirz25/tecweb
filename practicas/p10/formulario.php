@@ -16,10 +16,30 @@
 
     <form id="miFormulario" onsubmit="" method="post">
         <fieldset>
-            <legend>Actualiza los datos personales de esta persoa:</legend>
+            <legend>Actualiza los datos personales de esta persona:</legend>
             <ul>
-                <li><label>Nombre:</label> <input type="text" name="name" value="<?= !empty($_POST['nombre'])?$_POST['nombre']:$_GET['nombre'] ?>"></li>
-                <li><label>Edad:</label> <input type="text" name="age" value="<?= !empty($_POST['edad'])?$_POST['edad']:$_GET['edad'] ?>"></li>
+                <li>
+                    <label>Nombre:</label> 
+                    <input type="text" name="name" value="<?php 
+                        // Verificar si el valor está en $_POST o $_GET antes de usarlo
+                        if (!empty($_POST['nombre'])) {
+                            echo htmlspecialchars($_POST['nombre']);
+                        } elseif (!empty($_GET['nombre'])) {
+                            echo htmlspecialchars($_GET['nombre']);
+                        }
+                    ?>">
+                </li>
+                <li>
+                    <label>Edad:</label> 
+                    <input type="text" name="age" value="<?php 
+                        // Verificar si el valor está en $_POST o $_GET antes de usarlo
+                        if (!empty($_POST['edad'])) {
+                            echo htmlspecialchars($_POST['edad']);
+                        } elseif (!empty($_GET['edad'])) {
+                            echo htmlspecialchars($_GET['edad']);
+                        }
+                    ?>">
+                </li>
             </ul>
         </fieldset>
         <p>
