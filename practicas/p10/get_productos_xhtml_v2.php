@@ -40,10 +40,11 @@
                         <th scope="col">Unidades</th>
                         <th scope="col">Detalles</th>
                         <th scope="col">Imagen</th>
+                        <th scope="col">Modificar</th> <!-- Nueva columna para modificar -->
                     </tr>
                   </thead>';
             echo '<tbody>';
-
+        
             while ($row = $result->fetch_assoc()) {
                 echo '<tr>';
                 echo '<th scope="row">' . $row['id'] . '</th>';
@@ -53,13 +54,12 @@
                 echo '<td>' . $row['precio'] . '</td>';
                 echo '<td>' . $row['unidades'] . '</td>';
                 echo '<td>' . utf8_encode($row['detalles']) . '</td>';
-                echo '<td><img src="' . $row['imagen'] . '" alt="Imagen del producto" width="150" height="150" /></td>';
+                echo '<td><img src="practicas/p10/img2/' . $row['imagen'] . '" alt="Imagen del producto" width="150" height="150" /></td>';
+                echo '<td><a href="formulario_productos_v2.html?id=' . $row['id'] . '">Modificar</a></td>';
                 echo '</tr>';
-            }
+            }            
 
             echo '</tbody></table>';
-
-            /** útil para liberar memoria asociada a un resultado con demasiada información */
             $result->free();
         }
 

@@ -3,83 +3,49 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro de Productos</title>
-    <link rel="stylesheet" href="styles.css"> 
+    <title>Modificar Producto</title>
+    <link rel="stylesheet" href="styles.css">
     <script>
-        function validarFormulario(event) {
-            // Evitar que el formulario se envíe hasta que se valide correctamente
-            event.preventDefault();
+        function cargarDatos() {
+            const urlParams = new URLSearchParams(window.location.search);
+            const id = urlParams.get('id');
 
-            // Validar el nombre
-            const nombre = document.getElementById('nombre').value;
-            if (nombre === "" || nombre.length > 100) {
-                alert("El nombre es requerido y debe tener 100 caracteres o menos.");
-                return;
+            if (id) {
+                // Realizar una petición AJAX o fetch para obtener los datos del producto
+                fetch(`get_producto_by_id.php?id=${id}`)
+                    .then(response => response.json())
+                    .then(data => {
+                        // Prellenar el formulario con los datos del producto
+                        document.getElementById('id').value = data.id;  // Agregado para enviar el ID
+                        document.getElementById('nombre').value = data.nombre;
+                        document.getElementById('marca').value = data.marca;
+                        document.getElementById('modelo').value = data.modelo;
+                        document.getElementById('precio').value = data.precio;
+                        document.getElementById('detalles').value = data.detalles;
+                        document.getElementById('unidades').value = data.unidades;
+                    });
             }
-
-            // Validar la marca (seleccionada de una lista)
-            const marca = document.getElementById('marca').value;
-            if (marca === "") {
-                alert("Debes seleccionar una marca.");
-                return;
-            }
-
-            // Validar el modelo (alfanumérico y máximo de 25 caracteres)
-            const modelo = document.getElementById('modelo').value;
-            const modeloRegex = /^[a-zA-Z0-9]*$/;
-            if (!modeloRegex.test(modelo) || modelo === "" || modelo.length > 25) {
-                alert("El modelo debe ser alfanumérico y tener 25 caracteres o menos.");
-                return;
-            }
-
-            // Validar el precio (mayor a 99.99)
-            const precio = parseFloat(document.getElementById('precio').value);
-            if (isNaN(precio) || precio <= 99.99) {
-                alert("El precio debe ser mayor a 99.99.");
-                return;
-            }
-
-            // Validar los detalles (opcional, pero si se usa, máximo 250 caracteres)
-            const detalles = document.getElementById('detalles').value;
-            if (detalles.length > 250) {
-                alert("Los detalles deben tener 250 caracteres o menos.");
-                return;
-            }
-
-            // Validar las unidades (requerido y mayor o igual a 0)
-            const unidades = parseInt(document.getElementById('unidades').value);
-            if (isNaN(unidades) || unidades < 0) {
-                alert("Las unidades deben ser un número mayor o igual a 0.");
-                return;
-            }
-
-            // Validar la imagen (si está vacía, usar imagen por defecto)
-            const imagen = document.getElementById('imagen').value;
-            if (imagen === "") {
-                alert("No seleccionaste una imagen, se usará una imagen por defecto.");
-                // Aquí puedes asignar una imagen por defecto
-                document.getElementById('imagen').value = 'ruta/a/imagen/por/defecto.png';
-            }
-
-            // Si todas las validaciones pasan, envía el formulario
-            document.querySelector('form').submit();
         }
+
+        document.addEventListener("DOMContentLoaded", cargarDatos);
     </script>
 </head>
 <body>
-    <h1>Registro de Nuevos Productos</h1>
-    <form action="set_producto_v2.php" method="POST" enctype="multipart/form-data" onsubmit="validarFormulario(event)">
+    <h1>Agregar Producto</h1>
+    <form action="update_producto.php" method="POST" enctype="multipart/form-data" onsubmit="validarFormulario(event)">
+        <input type="hidden" id="id" name="id" value="">
+        
         <label for="nombre">Nombre:</label> <br>
         <input type="text" id="nombre" name="nombre" required> <br>
 
         <label for="marca">Marca:</label> <br>
         <select id="marca" name="marca" required>
             <option value="">Selecciona una marca</option>
-            <option value="Marca1">Hasbro</option>
-            <option value="Marca2">Mattel</option>
-            <option value="Marca3">Mi Alegría</option>
-            <option value="Marca3">Lego</option>
-            <option value="Marca3">Patito</option>
+            <option value="Hasbro">Hasbro</option>
+            <option value="Mattel">Mattel</option>
+            <option value="Mi Alegría">Mi Alegría</option>
+            <option value="Lego">Lego</option>
+            <option value="Patito">Patito</option>
         </select> <br>
 
         <label for="modelo">Modelo:</label> <br>
@@ -97,7 +63,7 @@
         <label for="imagen">Imagen (png):</label><br>
         <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg"><br>
 
-        <br> <button type="submit">Registrar Producto</button>
+        <br> <button type="submit">Agregar Producto</button>
     </form>
 </body>
 </html>
