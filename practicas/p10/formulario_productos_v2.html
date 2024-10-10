@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Modificar Producto</title>
+    <title>Agregar nuevo producto</title>
     <link rel="stylesheet" href="styles.css">
     <script>
         function cargarDatos() {
@@ -11,12 +11,10 @@
             const id = urlParams.get('id');
 
             if (id) {
-                // Realizar una petición AJAX o fetch para obtener los datos del producto
                 fetch(`get_producto_by_id.php?id=${id}`)
                     .then(response => response.json())
                     .then(data => {
-                        // Prellenar el formulario con los datos del producto
-                        document.getElementById('id').value = data.id;  // Agregado para enviar el ID
+                        document.getElementById('id').value = data.id;
                         document.getElementById('nombre').value = data.nombre;
                         document.getElementById('marca').value = data.marca;
                         document.getElementById('modelo').value = data.modelo;
@@ -27,6 +25,45 @@
             }
         }
 
+        function validarFormulario(event) {
+            const nombre = document.getElementById('nombre').value;
+            const modelo = document.getElementById('modelo').value;
+            const precio = document.getElementById('precio').value;
+            const detalles = document.getElementById('detalles').value;
+            const unidades = document.getElementById('unidades').value;
+
+            // Validaciones del nombre
+            if (nombre.length === 0 || nombre.length > 100) {
+                alert("El nombre es requerido y debe tener 100 caracteres o menos.");
+                event.preventDefault();
+            }
+
+            // Validaciones del modelo
+            const modeloRegex = /^[a-zA-Z0-9\s]+$/;  // Solo alfanumérico
+            if (!modeloRegex.test(modelo) || modelo.length > 25) {
+                alert("El modelo es requerido, debe ser alfanumérico y tener 25 caracteres o menos.");
+                event.preventDefault();
+            }
+
+            // Validaciones del precio
+            if (precio <= 99.99) {
+                alert("El precio debe ser mayor a 99.99.");
+                event.preventDefault();
+            }
+
+            // Validaciones de detalles
+            if (detalles.length > 250) {
+                alert("Los detalles deben tener 250 caracteres o menos.");
+                event.preventDefault();
+            }
+
+            // Validaciones de unidades
+            if (unidades < 0) {
+                alert("El número de unidades debe ser mayor o igual a 0.");
+                event.preventDefault();
+            }
+        }
+
         document.addEventListener("DOMContentLoaded", cargarDatos);
     </script>
 </head>
@@ -34,9 +71,9 @@
     <h1>Agregar Producto</h1>
     <form action="update_producto.php" method="POST" enctype="multipart/form-data" onsubmit="validarFormulario(event)">
         <input type="hidden" id="id" name="id" value="">
-        
+
         <label for="nombre">Nombre:</label> <br>
-        <input type="text" id="nombre" name="nombre" required> <br>
+        <input type="text" id="nombre" name="nombre" maxlength="100" required> <br>
 
         <label for="marca">Marca:</label> <br>
         <select id="marca" name="marca" required>
@@ -49,19 +86,19 @@
         </select> <br>
 
         <label for="modelo">Modelo:</label> <br>
-        <input type="text" id="modelo" name="modelo" required> <br>
+        <input type="text" id="modelo" name="modelo" maxlength="25" required> <br>
 
         <label for="precio">Precio:</label> <br>
-        <input type="number" id="precio" name="precio" step="0.01" required> <br>
+        <input type="number" id="precio" name="precio" step="0.01" min="99.99" required> <br>
 
         <label for="detalles">Detalles:</label><br>
-        <textarea id="detalles" name="detalles" rows="4"></textarea><br>
+        <textarea id="detalles" name="detalles" rows="4" maxlength="250"></textarea><br>
 
         <label for="unidades">Unidades:</label><br>
-        <input type="number" id="unidades" name="unidades" required><br>
+        <input type="number" id="unidades" name="unidades" min="0" required><br>
 
-        <label for="imagen">Imagen (png):</label><br>
-        <input type="file" id="imagen" name="imagen" accept="image/png, image/jpeg"><br>
+        <label for="imagen">Imagen del producto (png):</label><br>
+        <input type="file" name="imagen" id="imagen">
 
         <br> <button type="submit">Agregar Producto</button>
     </form>
