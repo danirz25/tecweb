@@ -39,7 +39,9 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
 
     // Ejecutar la consulta
     if ($stmt->execute()) {
-        echo "Producto actualizado/agregado con éxito";
+        // Redirigir al usuario a get_productos_vigentes_v2.php
+        header('Location: get_productos_vigentes_v2.php');
+        exit; // Asegurar que no se siga ejecutando el script después de la redirección
     } else {
         echo "Error al procesar el producto: " . $stmt->error;
     }
