@@ -230,6 +230,7 @@ function marca(mar){
         "Mi Alegría":3,
         "Lego":4,
         "Patito":5,
+
     };
     if(marcas[mar] == undefined){
         alert("La marca debe ser valida");

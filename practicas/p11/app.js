@@ -255,7 +255,7 @@ function nombre(nom){
 
 function marca(mar){
     let marcas = {
-        "Hasbrp":1,
+        "Hasbro":1,
         "Mattel":2,
         "Mi Alegría":3,
         "Lego":4,
