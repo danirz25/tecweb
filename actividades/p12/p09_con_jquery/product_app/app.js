@@ -125,12 +125,7 @@ $(document).ready(function(){
             "imagen": $('#imagen').val()
         };
     
-        /**
-         * AQUÍ DEBES AGREGAR LAS VALIDACIONES DE LOS DATOS EN EL JSON
-         * --> EN CASO DE NO HABER ERRORES, SE ENVIAR EL PRODUCTO A AGREGAR
-         **/
-        if(nombre(finalJSON.nombre)){ //Se valida el nombre, si es incorrecto la funcion de nombre regresa true, 
-            //por lo que se muestra un mensaje de error y se sale del proceso de envio de datos, se cancela el submit
+        if(nombre(finalJSON.nombre)){ 
             $(this).addClass('is-invalid');
             return;
         }
@@ -154,8 +149,7 @@ $(document).ready(function(){
             $(this).addClass('is-invalid');
             return;
         }
-        if(finalJSON.imagen == ""){ //Para el campo de la imagen, no hay una validacion como tal, pero en dado caso de que no se haya
-            //ingresado una ruta a una imagen, se asigna una imagen por defecto
+        if(finalJSON.imagen == ""){ 
             finalJSON.imagen = "img/default.png";
         }
         
@@ -224,10 +218,8 @@ $(document).ready(function(){
         });
         e.preventDefault();
     });    
-    //Se agregan ahora los event listeners para los campos del formulario, se realizan las validaciones
-    //correspondientes y se muestra un mensaje de error si es necesario.
-    $('#name').on('blur', function() { //Se agrega un event listener para el campo nombre, cada vez que se pierde el foco, o sea que
-        //se da click en otro lado cuando antes se le habia dado click a este campo, se ejecuta la función
+
+    $('#name').on('blur', function() {
         let nombreInput = $(this).val();
         if (nombre(nombreInput)) {
             $(this).addClass('is-invalid');
