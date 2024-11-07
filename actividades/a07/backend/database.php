@@ -6,7 +6,10 @@
         'marketzone'
     );
 
+    /**
+     * NOTA: si la conexión falló $conexion contendrá false
+     **/
     if(!$conexion) {
-        die('¡Base de datos sin conexión!');
+        die('¡Base de datos NO conextada!');
     }
 ?>
