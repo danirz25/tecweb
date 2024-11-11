@@ -1,15 +1,16 @@
 <?php
-namespace TECWEB\MYAPI;
+namespace myapi;
 
-use TECWEB\MYAPI\DataBase;
+use myapi\DataBase as DataBase;
 require_once __DIR__ . '/DataBase.php';
 
 class Products extends DataBase {
     private $data;
 
-    public function __construct($db, $user='root', $pass='12345678a') {
-        $this->data = array();
+    public function __construct($db, $user='root', $pass='DaPaRuniel25!') {
         parent::__construct($db, $user, $pass);
+        $this->data = array();
+        
     }
 
     public function add($jsonOBJ) {
