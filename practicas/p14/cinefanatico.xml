@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE cinefanatico SYSTEM "cinefanatico.dtd">
+<cinefanatico>
+    <!--Persona 1 -->
+    <tarjeta noserie="12345" visitas="10" puntos="200">
+        <nombre>Daniel Ruiz</nombre>
+        <correo>Daniel.ruizitocomunica@outlook.com</correo>
+        <telefono tipo="movil"> 222 464 1545 </telefono>
+        <telefono tipo="casa">233 311 5528</telefono>
+    </tarjeta>
+    <!--Persona 2 -->
+    <tarjeta noserie="67890" visitas="5" puntos="100">
+        <nombre>Roman Dios</nombre>
+        <correo>Roman.deidad@GODmail.com</correo>
+        <telefono tipo="movil">800 633 3380</telefono>
+    </tarjeta>
+</cinefanatico>

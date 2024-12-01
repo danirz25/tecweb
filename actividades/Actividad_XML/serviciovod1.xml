@@ -1,0 +1,104 @@
+<CatalogoVOD>
+    <cuenta>
+        <correo>danielpatino@outlook.com</correo>
+        <perfiles>
+            <perfil>
+                <usuario>Aimep3</usuario>
+                <idioma>Catalán</idioma>
+            </perfil>
+            <perfil>
+                <usuario>La venenito</usuario>
+                <idioma>Inglés</idioma>
+            </perfil>
+        </perfiles>
+    </cuenta>
+    
+    <contenido>
+        <peliculas>>
+             <!-- Primer género de películas -->
+            <genero>
+                <nombre>Accion</nombre>
+                <titulo>
+                    <nombre>Fornait la película</nombre>
+                    <duracion>120</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Fornait 2: La venganza del bananin</nombre>
+                    <duracion>105</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Fornait 3: La victoria magistral xD</nombre>
+                    <duracion>98</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Pollitos en fuga en fornait</nombre>
+                    <duracion>130</duracion>
+                </titulo>
+            </genero>
+            <!-- Segundo género de películas -->
+            <genero>
+                <nombre>Terror</nombre>
+                <titulo>
+                    <nombre>El exorcista</nombre>
+                    <duracion>90</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La La Land</nombre>
+                    <duracion>85</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La substancia</nombre>
+                    <duracion>110</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Hereditary</nombre>
+                    <duracion>95</duracion>
+                </titulo>
+            </genero>
+        </peliculas>
+        
+        <!-- Primer género de programas -->
+        <programas>
+            <genero>
+                <nombre>Drama</nombre>
+                <titulo>
+                    <nombre>La familia peluche</nombre>
+                    <duracion>45</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>The Penguin</nombre>
+                    <duracion>50</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Una familia de 10</nombre>
+                    <duracion>42</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Una familia de 20</nombre>
+                    <duracion>48</duracion>
+                </titulo>
+            </genero>
+            <genero>
+
+                <!-- Segundo género de programas -->
+                <nombre>Documental</nombre>
+                <titulo>
+                    <nombre>El forntite: Repercusión en los jóvenes.</nombre>
+                    <duracion>60</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Animales acuaticos</nombre>
+                    <duracion>55</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>La vida en el mundo</nombre>
+                    <duracion>58</duracion>
+                </titulo>
+                <titulo>
+                    <nombre>Cosmos</nombre>
+                    <duracion>62</duracion>
+                </titulo>
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>

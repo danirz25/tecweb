@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+           xmlns:tw="http://tecnologiasweb.com.mx"
+           targetNamespace="http://tecnologiasweb.com.mx"
+           elementFormDefault="qualified">
+
+    <!-- Tipo complejo para el elemento Cuenta -->
+    <xs:complexType name="cuentaType">
+        <xs:sequence>
+            <xs:element name="Nombre" type="xs:string"/>
+            <xs:element name="Correo" type="xs:string"/>
+            <xs:element name="Telefono" type="tw:telefonoType" minOccurs="0"/>
+        </xs:sequence>
+        <xs:attribute name="id" type="xs:positiveInteger" use="required"/>
+        <xs:attribute name="plan" type="xs:string" use="required"/>
+        <xs:attribute name="fechaIni" type="xs:date" use="optional"/>
+        <xs:attribute name="fechaFin" type="xs:date" use="optional"/>
+    </xs:complexType>
+
+    <!-- Tipo complejo para el elemento Telefono -->
+    <xs:complexType name="telefonoType">
+        <xs:sequence>
+            <xs:element name="Numero" type="xs:string"/>
+        </xs:sequence>
+        <xs:attribute name="tipo" type="xs:string"/>
+    </xs:complexType>
+
+    <!-- Tipo complejo para el elemento Spotify -->
+    <xs:complexType name="spotifyType">
+        <xs:sequence>
+            <xs:element name="Cuenta" type="tw:cuentaType" minOccurs="1" maxOccurs="unbounded"/>
+        </xs:sequence>
+    </xs:complexType>
+
+    <!-- Elemento raíz -->
+    <xs:element name="Spotify" type="tw:spotifyType"/>
+</xs:schema>

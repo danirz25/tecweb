@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE CatalogoVOD SYSTEM "serviciovod_ep.dtd">
+<CatalogoVOD>
+    <cuenta correo="danielpatino@alumno.buap.mx">
+        <perfil usuario="Aimep3" idioma="español" />
+        <perfil usuario="Kabezuko" idioma="inglés" />
+    </cuenta>
+    <contenido>
+        <peliculas region="MEX">
+            <genero nombre="Acción"
+                <titulo nombre="Pollitos en fuga" duracion="120" />
+                <titulo nombre="Chicken Little" duracion="90" />
+            </genero>
+        </peliculas>
+        <series region="USA">
+            <genero nombre="Comedia">
+                <titulo nombre="¡Carly" duracion="45" />
+                <titulo nombre="Drake y Josh" duracion="30" />
+            </genero>
+        </series>
+    </contenido>
+</CatalogoVOD>

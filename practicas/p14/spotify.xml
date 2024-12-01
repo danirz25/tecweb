@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Spotify xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="spotify_v2.xsd" version="1.0">
+  <Cuenta id="1" plan="premium" fechaIni="2022-02-01" fechaFin="2023-02-01">
+    <Nombre>Bananin del Fortnite</Nombre>
+    <Correo>Bananin.femboy@fornacho.com</Correo>
+    <Telefono tipo="movil">000-123-4567</Telefono>
+  </Cuenta>
+  <Cuenta id="2" plan="free">
+    <Nombre>Pam de Brawl Stars</Nombre>
+    <Correo>Joe.mama@gmail.com</Correo>
+    <!-- Telefono opcional omitido -->
+  </Cuenta>
+  <Cuenta id="3" plan="family" fechaIni="2023-03-01">
+    <Nombre>Michael Scott</Nombre>
+    <Correo>mscott@dundermifflin.com</Correo>
+    <Telefono tipo="fijo">222 118 4520</Telefono>
+  </Cuenta>
+</Spotify>

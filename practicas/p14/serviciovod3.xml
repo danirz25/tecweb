@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD>
+    <cuenta correo="danielpatino@alumno.buap.mx">
+        <perfil usuario="Aimep3" idioma="español" />
+        <perfil usuario="Kabezuko" idioma="inglés" />
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Acción">
+
+                
+                <!-- Usando entidades predefinidas -->
+                <titulo nombre="Entidades: La Película">&lt;video id=&quot;11&quot;&gt;&amp;lt;/video&gt;</titulo>
+
+
+                <!-- Usando CDATA -->
+                <titulo nombre="CDATA: La Película"><![CDATA[<video id="11">&lt;</video>]]></titulo>
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Comedia">
+                <titulo nombre="¡Carly" duracion="45" />
+                <titulo nombre="Drake y Josh" duracion="30" />
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>

@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CatalogoVOD>
+    <cuenta correo="danielpatino@alumno.buap.mx">
+        <perfil usuario="Aimep3" idioma="español" />
+        <perfil usuario="Kabezuko" idioma="inglés" />
+    </cuenta>
+    <contenido>
+        <peliculas>
+            <genero nombre="Acción">
+                <titulo nombre="Pollitos en fuga" duracion="120" />
+                <titulo nombre="Chciken Little" duracion="90" />
+                <titulo nombre="Orgullo y prejuicio" duracion="105" />
+                <titulo nombre="La leyenda de la llorona" duracion="110" />
+            </genero>
+            <genero nombre="Drama">
+                <titulo nombre="El santo vs las momias de Guanajuato" duracion="115" />
+                <titulo nombre="Como la primera vez" duracion="100" />
+                <titulo nombre="Vacas Vaqueras" duracion="130" />
+                <titulo nombre="Las locuras del emperador" duracion="95" />
+            </genero>
+        </peliculas>
+        <programas>
+            <genero nombre="Comedia">
+                <titulo nombre="¡Carly" duracion="45" />
+                <titulo nombre="Drake y Josh" duracion="30" />
+                <titulo nombre="Star Wars: Clone Wars" duracion="60" />
+                <titulo nombre="Amigazazo" duracion="40" />
+            </genero>
+            <genero nombre="Documental">
+                <titulo nombre="Los animales del planeta" duracion="50" />
+                <titulo nombre="Taboo" duracion="55" />
+                <titulo nombre="Mexicánicos" duracion="47" />
+                <titulo nombre="Kenan y Kell" duracion="65" />
+            </genero>
+        </programas>
+    </contenido>
+</CatalogoVOD>
